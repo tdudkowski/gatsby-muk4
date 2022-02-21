@@ -1,11 +1,9 @@
 import React from "react"
-// import styled from "styled-components"
 import { Link } from "gatsby"
 
 const NavbarLinks = () => {
   return (
     <ul>
-      {/* <NavItem to="/">Strona główna</NavItem> */}
       <li>
         <Link activeClassName="menuLinkActive" to="/">Strona główna</Link>
       </li>
@@ -23,6 +21,9 @@ const NavbarLinks = () => {
       </li>
       <li>
         <Link activeClassName="menuLinkActive" to="/blog">Blog</Link>
+      </li>
+      <li>
+        <Link activeClassName="menuLinkActive" to="/articles">Artykuły</Link>
       </li>
       <li>
         <Link activeClassName="menuLinkActive" to="/deutsch">Deutsch</Link>

@@ -25,8 +25,6 @@ const OPage = ({ data }) => {
         Via Wrocław – Małgorzata Urlich-Kornacka, ul. Budziszyńska 27a/26, 54-434 Wrocław, NIP: 616-139-17-82
       </p>
 
-      <GatsbyImage image={getImage(data.wycieczka.childImageSharp.gatsbyImageData)} alt="wycieczka" />
-
       <h3>O mnie</h3>
       <p>
         Jestem typem człowieka, który nie lubi stać w miejscu. Im więcej się wokół mnie dzieje, tym bardziej czuję się w swoim żywiole. Dzielę życie pomiędzy trzy wielkie pasje: przewodnictwo, język niemiecki oraz teatr (amatorski). Bardzo często udaje mi się te pasje połączyć – pracowałam przez długi czas jako nauczyciel języka niemieckiego oraz animator językowy w ogólnopolskim projekcie Deutsch-Wagen-Tour. Wsiadałam z moją magiczną walizką do kolorowego samochodu i jeździłam po Polsce, prowadząc zajęcia zachęcające do nauki języka. Nadal bardzo lubię pracę z młodzieżą i chętnie prowadzę animacje oraz wycieczki dla grup z wymiany polsko-niemieckiej. Kontakt z językiem jest dla mnie bardzo ważny. Regularnie piszę artykuły do czasopisma „Schlesien heute” oraz na bloga silesia-news.de, promując Wrocław i region dolnośląski wśród czytelników niemieckich.
@@ -37,6 +35,9 @@ const OPage = ({ data }) => {
       <p>
         Więc jeśli lubisz pasjonatów i szukasz czegoś specjalnego dla swojej grupy, zapraszam!
       </p>
+
+      <GatsbyImage image={getImage(data.wycieczka.childImageSharp.gatsbyImageData)} alt="wycieczka" />
+
     </Layout>
   )
 }

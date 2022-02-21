@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import NavbarLinks from "../components/Navbar/NavbarLinks"
 import Seo from "../components/seo"
 import styled from "styled-components"
 import "../styles/css/font-awesome.css"
@@ -44,8 +45,7 @@ background-image: none;
 
 const IndexPage = ({ data }) => {
 
-  // const ArrayWPContentNews = data.WPContentNews.edges.map((trip) => trip)
-  const ArrayWWPContentPoster = data.WPContentPoster.edges.map((trip) => trip)
+  const ArrayWWPContentPoster = data.WPContentPoster.edges.map((el) => el)
 
   return (
     <StyledContainer className="container">
@@ -75,32 +75,15 @@ const IndexPage = ({ data }) => {
             <h3>Aktualności</h3>
             <GatsbyImage image={ArrayWWPContentPoster[0].node.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
               alt="obrazek" />
-          </Link></div>
+          </Link>
+        </div>
       </section>
 
       <div className="menu">
         <section className="about">
-          <ul>
-            <li>
-              <Link to="o">O mnie</Link>
-            </li>
-            <li>
-              <Link to="wroclaw">O Wrocławiu</Link>
-            </li>
-            <li>
-              <Link to="wycieczki">Wycieczki</Link>
-            </li>
-            <li>
-              <Link to="publikacje">Publikacje</Link>
-            </li>
-            <li>
-              <Link to="blog">Blog</Link>
-            </li>
-            <li>
-              <Link to="deutsch">Deutsch</Link>
-            </li>
-          </ul>
+          <NavbarLinks />
         </section>
+
         <section className="news">
           <h2>Facebook</h2>
 
@@ -141,21 +124,6 @@ export const indexQuery = graphql`
       }
     
     WPContentBlog: allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "blog"}}}}}) {
-      edges {
-        node {
-          slug
-          title
-          content
-          id
-          categories {
-            nodes {
-              name
-            }
-          }
-        }
-      }
-    }
-    WPContentNews:  allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "news"}}}}}) {
       edges {
         node {
           slug

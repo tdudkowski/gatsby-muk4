@@ -11,12 +11,14 @@ padding:.5rem;
 & ul {list-style-type: circle; margin-left:1rem;}
 `;
 
-const blogPage = ({ data }) => {
+const articleTemplatePage = ({ data }) => {
+
     const { title, content } = data.wpPost;
+
     return (
         <LayoutBlog>
 
-            <Link to="/">Strona główna</Link>
+            <Link to="/articles">Aktualności</Link>
 
             <h2>{title}</h2>
             <StyledArticle>
@@ -25,9 +27,11 @@ const blogPage = ({ data }) => {
         </LayoutBlog>
     );
 };
-export default blogPage
+
+export default articleTemplatePage
+
 export const query = graphql`
-  query WPBlogPageBySlug($slug: String!) {
+  query WPArticlePageBySlug($slug: String!) {
    wpPost( slug: { eq: $slug } ) {
     slug
     title
