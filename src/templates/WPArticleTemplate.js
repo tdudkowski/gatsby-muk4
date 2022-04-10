@@ -18,7 +18,7 @@ const articleTemplatePage = ({ data }) => {
     return (
         <LayoutBlog>
 
-            <Link to="/articles">Aktualności</Link>
+            <Link to="/articles">Artykuły</Link>
 
             <h2>{title}</h2>
             <StyledArticle>
